@@ -37,11 +37,7 @@ public class PlayerController : MonoBehaviour {
         {
             GameObject hitOb = hit.collider.gameObject;
 
-            if (!hitOb.CompareTag("CanMove"))
-            {
-                if (hitOb.name == "Switch") hitOb.GetComponent<ButtonController>().clicked = true;
-                return;
-            }
+            if (!hitOb.CompareTag("CanMove")) return;
 
             moveFlag = true;
             moveOb = hitOb;
