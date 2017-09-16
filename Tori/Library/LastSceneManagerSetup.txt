@@ -1,4 +1,12 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Gimmick/Kei_easy.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Gimmick/miyumiyu-easy.unity
+=======
+- path: Assets/Gimmick/Hama_hard.unity
+>>>>>>> 48c9b9e783d9063e83885e502db57639cda8bab2
+>>>>>>> 59fb4894e0709eab7970ea165d0368ccf740888e
   isLoaded: 1
   isActive: 1
