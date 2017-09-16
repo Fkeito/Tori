@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Gimmick/Kei_hard.unity
+- path: Assets/Gimmick/Hama_hard.unity
   isLoaded: 1
   isActive: 1
