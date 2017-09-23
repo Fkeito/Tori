@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Demo.unity
+- path: Assets/VRTK/Examples/006_Controller_UsingADoor.unity
   isLoaded: 1
   isActive: 1
