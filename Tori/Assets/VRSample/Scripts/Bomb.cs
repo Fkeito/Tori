@@ -10,7 +10,7 @@ public class Bomb : VRObjectBase{
     public void Update() {
         if (Picked)
         {
-            if (transform.parent.gameObject.GetComponent<SteamVR_TrackedObject>()||Input.GetKey(KeyCode.A))
+            if (transform.parent.gameObject.GetComponent<Hand>().controller.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad) ||Input.GetKey(KeyCode.A))
             {
                 if (LetsBom) {
                     return;
@@ -43,6 +43,8 @@ public class Bomb : VRObjectBase{
         }
         Destroy(obj,2.1f);
         Destroy(gameObject.GetComponent<MeshRenderer>(),1.0f);
+        DestroyImmediate(GetComponent<Throwable>());
+        DestroyImmediate(rigidBody);
         Destroy(gameObject,8);
         Destroy(this,10);
     }
