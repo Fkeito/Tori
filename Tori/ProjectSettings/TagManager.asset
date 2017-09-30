@@ -6,6 +6,10 @@ TagManager:
   tags:
   - TeleportIgnore
   - CanMove
+  - projectile
+  - FxTemporaire
+  - VRObject
+  - VRItem
   layers:
   - Default
   - TransparentFX

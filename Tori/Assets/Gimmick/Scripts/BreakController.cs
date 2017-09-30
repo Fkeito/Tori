@@ -23,7 +23,7 @@ public class BreakController : MonoBehaviour {
     {
         if(velocity > speed)
         {
-            GameObject tmpFrag = Instantiate(frag, transform.position, Quaternion.identity);
+            GameObject tmpFrag = (GameObject)Instantiate(frag, transform.position, Quaternion.identity);
             if (Obj != null) Instantiate(Obj, transform.position, transform.rotation);
             Destroy(tmpFrag, 1.5f);
             Destroy(gameObject);

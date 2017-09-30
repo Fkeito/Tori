@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/VRTK/Examples/006_Controller_UsingADoor.unity
+- path: Assets/VRSample/Scenes/SteamVRTest.unity
   isLoaded: 1
   isActive: 1
