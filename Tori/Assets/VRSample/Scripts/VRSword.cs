@@ -10,6 +10,8 @@ public class VRSword : VRObjectBase
 
     public float KireruTaiseki;
 
+    private bool Sindou;
+
     public override void Awake()
     {
         base.Awake();
@@ -17,7 +19,7 @@ public class VRSword : VRObjectBase
         GetComponent<Throwable>().attachEaseIn = true;
     }
 
-    //衝突判定
+    //衝突したら勝手に呼ばれる
     public void OnCollisionEnter(Collision other)
     {
         var trans = other.transform;
@@ -26,7 +28,7 @@ public class VRSword : VRObjectBase
             var sca = trans.lossyScale;
             if (sca.x * sca.y * sca.z >= KireruTaiseki)
             {
-                var force = transform.parent.gameObject.GetComponent<Hand>().GetTrackedObjectVelocity();
+                var force = Hand.GetTrackedObjectVelocity();
                 var mag = force.magnitude;
                 if (mag >= KireruHayasa)
                 {
@@ -35,7 +37,6 @@ public class VRSword : VRObjectBase
                     var right = Vector3.Cross(forward, transform.parent.up).normalized;
                     var direc1 = (forward + right).normalized;
                     var direc2 = (forward - right).normalized;
-                    mag = mag * (1/1.41421356f)*5;
                     sca *= 0.7f;
                     var mass = obj0.GetComponent<Rigidbody>().mass/2;
                     var obj1 = (GameObject)Instantiate(obj0, trans.position + right * 0.1f, trans.rotation);
@@ -47,7 +48,10 @@ public class VRSword : VRObjectBase
                     obj2.GetComponent<Rigidbody>().velocity=direc2 * mag;
                     obj1.transform.localScale = sca;
                     obj2.transform.localScale = sca;
-                    GetComponent<Hand>().controller.TriggerHapticPulse(2000);
+
+                    //出来てるかわかんないけど振動
+                    Sindou = true;
+                    Invoke("SindouYameru",0.3f);
                 }
             }
         }
@@ -69,5 +73,11 @@ public class VRSword : VRObjectBase
             Velocity = (Pos1 - Pos0) / Time.deltaTime;
         }
         Pos0 = transform.position;
+        if (Sindou&&device!=null) {
+            device.TriggerHapticPulse(2000);
+        }
+    }
+    private void SindouYameru() {
+        Sindou = false;
     }
 }

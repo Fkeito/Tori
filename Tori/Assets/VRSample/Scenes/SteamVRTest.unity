@@ -582,24 +582,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc25b2281f4762649b8e12acbef17b2e, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &823483990 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000012296626978, guid: cc25b2281f4762649b8e12acbef17b2e,
-    type: 2}
-  m_PrefabInternal: {fileID: 823483989}
---- !u!114 &823483991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 823483990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb4f773913c26d049aca7d231f9d8fc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coefficient: 5
-  speed: 5
 --- !u!1001 &888882722
 Prefab:
   m_ObjectHideFlags: 0
@@ -1110,11 +1092,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000014257371022, guid: fb0f08964cd111843b9763a799bed406, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.4
+      value: 0.289
       objectReference: {fileID: 0}
     - target: {fileID: 4000014257371022, guid: fb0f08964cd111843b9763a799bed406, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.214
       objectReference: {fileID: 0}
     - target: {fileID: 4000014257371022, guid: fb0f08964cd111843b9763a799bed406, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1130,25 +1112,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000014257371022, guid: fb0f08964cd111843b9763a799bed406, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4000014257371022, guid: fb0f08964cd111843b9763a799bed406, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4000014257371022, guid: fb0f08964cd111843b9763a799bed406, type: 2}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013192956078, guid: fb0f08964cd111843b9763a799bed406,
-        type: 2}
-      propertyPath: KireruHayasa
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013192956078, guid: fb0f08964cd111843b9763a799bed406,
-        type: 2}
-      propertyPath: KireruTaiseki
-      value: 0.001
+    - target: {fileID: 4000014257371022, guid: fb0f08964cd111843b9763a799bed406, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb0f08964cd111843b9763a799bed406, type: 2}

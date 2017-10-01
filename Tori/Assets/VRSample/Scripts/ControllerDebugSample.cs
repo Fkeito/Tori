@@ -5,12 +5,6 @@ using Valve.VR.InteractionSystem;
 public class ControllerDebugSample : VRObjectBase
 {
     private bool IsAttached;
-    private SteamVR_Controller.Device device;
-    public override void Awake()
-    {
-        base.Awake();
-        device = null;
-    }
     void Update()
     {
         if (device != null)
@@ -75,14 +69,5 @@ public class ControllerDebugSample : VRObjectBase
                 Debug.Log("x: " + position.x + " y: " + position.y+"らへんを触っている");
             }
         }
-    }
-    public void OnAttachedToHand(Hand hand)
-    {
-        device = hand.controller;
-    }
-
-    public void OnDetachedFromHand(Hand hand)
-    {
-        device = null;
     }
 }

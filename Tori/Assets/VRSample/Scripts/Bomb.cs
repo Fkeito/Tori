@@ -1,18 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Valve.VR.InteractionSystem;
+
 public class Bomb : VRObjectBase{
 
     public GameObject Effect;
     public float BomTime;
     private bool Picked;
     private bool LetsBom;
+    
     public void Update() {
         if (Picked)
         {
-            if (transform.parent.gameObject.GetComponent<Hand>().controller.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad) ||Input.GetKey(KeyCode.A))
+            if (device != null)
             {
-                if (LetsBom) {
+                if (device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
+                {
+                    if (LetsBom)
+                    {
+                        return;
+                    }
+                    Invoke("Dokan", BomTime);
+                    LetsBom = true;
+                }
+            }
+            else if (Input.GetKey(KeyCode.Q))
+            {
+                if (LetsBom)
+                {
                     return;
                 }
                 Invoke("Dokan", BomTime);
@@ -35,12 +50,14 @@ public class Bomb : VRObjectBase{
         GameObject obj;
         if (Picked) {
             obj=(GameObject)Instantiate(Effect,transform.parent.position,new Quaternion());
-            transform.parent.gameObject.GetComponent<Hand>().DetachObject(gameObject);
+            obj.GetComponent<Explosion>().device =device;
+            Hand.DetachObject(gameObject);
         }
         else
         {
             obj=(GameObject)Instantiate(Effect,transform.position,new Quaternion());
         }
+        
         Destroy(obj,2.1f);
         Destroy(gameObject.GetComponent<MeshRenderer>(),1.0f);
         DestroyImmediate(GetComponent<Throwable>());

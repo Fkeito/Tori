@@ -44,6 +44,30 @@ public abstract class VRObjectBase : MonoBehaviour {
     public Rigidbody rigidBody { get; set; }
 
     private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) & (~Hand.AttachmentFlags.DetachOthers);
+
+    public Hand Hand { get {
+            var hand = transform.parent.gameObject.GetComponent<Hand>();
+            if (hand == null)
+            {
+                return null;
+            }
+            else {
+                return hand;
+            }
+        } }
+
+    public SteamVR_Controller.Device device {
+        get
+        {
+            if (Hand == null)
+            {
+                return null;
+            }
+            else {
+                return Hand.controller;
+            }
+        }
+    }
     
     public virtual void Awake()
     {

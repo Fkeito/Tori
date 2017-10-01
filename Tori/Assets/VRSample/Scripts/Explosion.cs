@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Valve.VR.InteractionSystem;
 
 public class Explosion : MonoBehaviour {
     public float coefficient;   // 空気抵抗係数
@@ -7,7 +8,7 @@ public class Explosion : MonoBehaviour {
     private new Rigidbody rigidbody { get; set; }
     private bool Bombing;
     private float time;
-
+    public SteamVR_Controller.Device device { get; set; }
     void OnTriggerStay(Collider col)
     {
         if (Bombing)
@@ -38,5 +39,7 @@ public class Explosion : MonoBehaviour {
         {
             Bombing = true;
         }
+        if(Bombing&&device!=null)
+            device.TriggerHapticPulse((ushort)(500-(time-2)*2000));
     }
 }
