@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/VRProject/Scenes/Main.unity
+- path: Assets/Gimmick/Scenes/miyumiyu-easy.unity
   isLoaded: 1
   isActive: 1
