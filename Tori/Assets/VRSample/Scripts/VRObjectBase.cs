@@ -153,4 +153,66 @@ public abstract class VRObjectBase : MonoBehaviour {
             }
         }
     }
+
+    public VRObjectMode GetVRObjectMode()
+    {
+        return this.VRObjectMode;
+    }
+    public void SetVRObjectMode(VRObjectMode mode)
+    {
+        this.VRObjectMode = mode;
+
+        if (VRObjectMode != VRObjectMode.NeverMove)
+        {
+            transform.tag = "VRItem";
+
+            if (rigidBody == null)
+            {
+                rigidBody = gameObject.AddComponent<Rigidbody>();
+            }
+            rigidBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+            rigidBody.useGravity = UseGravity;
+            if (Mass != 0)
+            {
+                rigidBody.mass = Mass;
+            }
+            
+            if (VRObjectMode == VRObjectMode.Grabable)
+            {
+                //Throwable追加
+                Throwable thro = gameObject.GetComponent<Throwable>();
+                if (!thro) thro = gameObject.AddComponent<Throwable>();
+                thro.onPickUp = onPickUp;
+                thro.onDetachFromHand = onThrowAway;
+
+                //Attachイベント消去
+                onAttachedToHand = new UnityEvent();
+                onDetachedFromHand = new UnityEvent();
+            }
+            else
+            {
+                Throwable thro = gameObject.GetComponent<Throwable>();
+                if (thro) Destroy(thro);
+            }
+
+            //InteractableHoverEvents追加
+            InteractableHoverEvents ihe = gameObject.GetComponent<InteractableHoverEvents>();
+            ihe.onHandHoverBegin = onHandHoverBegin;
+            ihe.onHandHoverEnd = onHandHoverEnd;
+            if (VRObjectMode != VRObjectMode.Attachable)
+            {
+                //Attachイベント消去
+                onAttachedToHand = new UnityEvent();
+                onDetachedFromHand = new UnityEvent();
+            }
+            ihe.onAttachedToHand = onAttachedToHand;
+            ihe.onDetachedFromHand = onDetachedFromHand;
+        }
+        else
+        {
+            DestroyImmediate(rigidBody);
+            Throwable thro = gameObject.GetComponent<Throwable>();
+            if (thro) Destroy(thro);
+        }
+    }
 }

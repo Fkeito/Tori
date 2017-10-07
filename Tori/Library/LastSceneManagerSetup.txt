@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/VRProject/Scenes/Main.unity
+- path: Assets/VRProject/_Individual/Keito/VRTest_K.unity
   isLoaded: 1
   isActive: 1
