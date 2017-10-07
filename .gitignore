@@ -28,11 +28,11 @@ Temporary Items
 .apdisk
 
 ### Unity ###
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
+Tori/[Ll]ibrary/
+Tori/[Tt]emp/
+Tori/[Oo]bj/
+Tori/[Bb]uild/
+Tori/[Bb]uilds/
 /Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
