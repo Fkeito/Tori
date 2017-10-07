@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using Valve.VR.InteractionSystem;
 public class Bird : VRObjectBase {
 
     public Camera mainCamera;
+    public GameObject hand1,hand2;
+    private SteamVR_Controller.Device con1,con2;
 
     private bool VR = false;
 
@@ -18,7 +20,12 @@ public class Bird : VRObjectBase {
 
     void Start()
     {
-        //if (device != null) VR = true;
+        if (hand1.transform.parent.gameObject.activeSelf)
+        {
+            VR = true;
+            con1 = hand1.GetComponent<Hand>().controller;
+            con2 = hand2.GetComponent<Hand>().controller;
+        }
         inCage = false;
     }
 
@@ -26,9 +33,15 @@ public class Bird : VRObjectBase {
     {
         if (VR)
         {
-            if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger)
-                    && device.GetPress(SteamVR_Controller.ButtonMask.Touchpad)){
-               // SetFly(device.transform.pos,)
+
+            if (con1.GetPressDown(SteamVR_Controller.ButtonMask.Trigger)
+                    && con1.GetPress(SteamVR_Controller.ButtonMask.Touchpad)){
+                SetFly(hand1.transform.position, hand1.transform.forward);
+            }
+            else if(con2.GetPressDown(SteamVR_Controller.ButtonMask.Trigger)
+                    && con2.GetPress(SteamVR_Controller.ButtonMask.Touchpad))
+            {
+                SetFly(hand2.transform.position, hand2.transform.forward);
             }
         }
         else
