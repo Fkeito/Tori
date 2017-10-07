@@ -123,6 +123,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &254365864 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000012926142840, guid: 3e91682b9cf7d2343ad152574d425cf8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1930312735}
 --- !u!4 &267827383 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000013187580270, guid: 3e91682b9cf7d2343ad152574d425cf8,
@@ -664,6 +669,16 @@ Prefab:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1173175297}
+    - target: {fileID: 114000011767186238, guid: 154505487c0198740a3c5255a26cc8c1,
+        type: 2}
+      propertyPath: hand1
+      value: 
+      objectReference: {fileID: 254365864}
+    - target: {fileID: 114000011767186238, guid: 154505487c0198740a3c5255a26cc8c1,
+        type: 2}
+      propertyPath: hand2
+      value: 
+      objectReference: {fileID: 2114327290}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 154505487c0198740a3c5255a26cc8c1, type: 2}
   m_IsPrefabParent: 0
@@ -1648,6 +1663,11 @@ Transform:
 --- !u!1 &1991451322 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000012514711648, guid: 3e91682b9cf7d2343ad152574d425cf8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1930312735}
+--- !u!1 &2114327290 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010477746548, guid: 3e91682b9cf7d2343ad152574d425cf8,
     type: 2}
   m_PrefabInternal: {fileID: 1930312735}
 --- !u!1 &2117901256
