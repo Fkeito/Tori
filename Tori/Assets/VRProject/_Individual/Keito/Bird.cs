@@ -18,7 +18,7 @@ public class Bird : VRObjectBase {
 
     void Start()
     {
-        if (device != null) VR = true;
+        //if (device != null) VR = true;
         inCage = false;
     }
 
@@ -26,7 +26,8 @@ public class Bird : VRObjectBase {
     {
         if (VR)
         {
-            if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger){
+            if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger)
+                    && device.GetPress(SteamVR_Controller.ButtonMask.Touchpad)){
                // SetFly(device.transform.pos,)
             }
         }
