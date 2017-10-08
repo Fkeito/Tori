@@ -5,7 +5,7 @@ public class Bird : VRObjectBase {
 
     public Camera mainCamera;
     public GameObject hand1,hand2;
-    private SteamVR_Controller.Device con1,con2;
+    private Hand con1,con2;
 
     private bool VR = false;
 
@@ -23,8 +23,8 @@ public class Bird : VRObjectBase {
         if (hand1.transform.parent.gameObject.activeSelf)
         {
             VR = true;
-            con1 = hand1.GetComponent<Hand>().controller;
-            con2 = hand2.GetComponent<Hand>().controller;
+            con1 = hand1.GetComponent<Hand>();
+            con2 = hand2.GetComponent<Hand>();
         }
         inCage = false;
     }
@@ -34,12 +34,14 @@ public class Bird : VRObjectBase {
         if (VR)
         {
 
-            if (con1.GetPressDown(SteamVR_Controller.ButtonMask.Trigger)
-                    && con1.GetPress(SteamVR_Controller.ButtonMask.Touchpad)){
+            if (con1.controller.GetPressDown(SteamVR_Controller.ButtonMask.Trigger)
+                    && con1.controller.GetPress(SteamVR_Controller.ButtonMask.Touchpad)
+                        && con1 != null){
                 SetFly(hand1.transform.position, hand1.transform.forward);
             }
-            else if(con2.GetPressDown(SteamVR_Controller.ButtonMask.Trigger)
-                    && con2.GetPress(SteamVR_Controller.ButtonMask.Touchpad))
+            else if(con2.controller.GetPressDown(SteamVR_Controller.ButtonMask.Trigger)
+                    && con2.controller.GetPress(SteamVR_Controller.ButtonMask.Touchpad)
+                        && con2 != null)
             {
                 SetFly(hand2.transform.position, hand2.transform.forward);
             }
