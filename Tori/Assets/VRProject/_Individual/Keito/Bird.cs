@@ -126,16 +126,16 @@ public class Bird : VRObjectBase {
     {
         if (isFly)
         {
-            var tmpObj = other.gameObject.GetComponent<VRObjectBase>();
+            var tmpObj = other.gameObject.GetComponent<ObjectForBird>();
             if (tmpObj)
             {
-                if (tmpObj.GetVRObjectMode() != VRObjectMode.NeverMove)
+                if (tmpObj.GetComponent<VRObjectBase>().GetVRObjectMode() != VRObjectMode.NeverMove)
                 {
                     Debug.Log("Catch");
                     objMode = tmpObj.GetVRObjectMode();
                     //tmpObj.SetVRObjectMode(VRObjectMode.None);
                     obj = other.transform.gameObject;
-                    obj.GetComponent<ObjectForBird>().caught = true;
+                    tmpObj.caught = true;
                     obj.transform.parent = this.transform;
                 }
             }

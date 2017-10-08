@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VRObjectMode: 1
-  UseGravity: 0
+  UseGravity: 1
   Mass: 0
   onPickUp:
     m_PersistentCalls:
@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VRObjectMode: 0
-  UseGravity: 0
+  UseGravity: 1
   Mass: 0
   onPickUp:
     m_PersistentCalls:
@@ -662,7 +662,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010076484584, guid: 154505487c0198740a3c5255a26cc8c1, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114000011767186238, guid: 154505487c0198740a3c5255a26cc8c1,
         type: 2}
@@ -679,6 +679,11 @@ Prefab:
       propertyPath: hand2
       value: 
       objectReference: {fileID: 2114327290}
+    - target: {fileID: 135000013190882458, guid: 154505487c0198740a3c5255a26cc8c1,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 154505487c0198740a3c5255a26cc8c1, type: 2}
   m_IsPrefabParent: 0
@@ -887,7 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VRObjectMode: 4
-  UseGravity: 0
+  UseGravity: 1
   Mass: 0
   onPickUp:
     m_PersistentCalls:
@@ -1107,7 +1112,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &1242795016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,7 +1145,7 @@ Transform:
   - {fileID: 1257318127}
   - {fileID: 1337998801}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1001 &1257318126
 Prefab:
   m_ObjectHideFlags: 0
@@ -1483,7 +1488,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1497386336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,7 +1519,7 @@ Transform:
   - {fileID: 328192180}
   - {fileID: 2117901257}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!4 &1610213136 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011246713752, guid: 3e91682b9cf7d2343ad152574d425cf8,
