@@ -679,6 +679,17 @@ Prefab:
       propertyPath: hand2
       value: 
       objectReference: {fileID: 2114327290}
+    - target: {fileID: 114000013530003792, guid: 154505487c0198740a3c5255a26cc8c1,
+        type: 2}
+      propertyPath: Direction
+      value: 
+      objectReference: {fileID: 1000013528398930, guid: c1178b2b19d97dd45815478d2534442f,
+        type: 2}
+    - target: {fileID: 114000013530003792, guid: 154505487c0198740a3c5255a26cc8c1,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1810325118}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 154505487c0198740a3c5255a26cc8c1, type: 2}
   m_IsPrefabParent: 0
@@ -995,57 +1006,60 @@ MonoBehaviour:
   onPickUp:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: 556e697479456e67696e652e4576656e74732e556e6974794576656e742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+    m_CallsDirty: 1
   onThrowAway:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: 556e697479456e67696e652e4576656e74732e556e6974794576656e742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+    m_CallsDirty: 1
   onHandHoverBegin:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1239446831}
-        m_MethodName: set_material
+        m_MethodName: 7365745f6d6174657269616c
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2100000, guid: ec2bfa3b0805afc419744b1d4999a9b1,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 556e697479456e67696e652e4d6174657269616c2c20556e697479456e67696e65
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: 556e697479456e67696e652e4576656e74732e556e6974794576656e742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+    m_CallsDirty: 1
   onHandHoverEnd:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1239446831}
-        m_MethodName: set_material
+        m_MethodName: 7365745f6d6174657269616c
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2100000, guid: 7e90f10e44a186a49a00679d068515ed,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 556e697479456e67696e652e4d6174657269616c2c20556e697479456e67696e65
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: 556e697479456e67696e652e4576656e74732e556e6974794576656e742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+    m_CallsDirty: 1
   onAttachedToHand:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: 556e697479456e67696e652e4576656e74732e556e6974794576656e742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+    m_CallsDirty: 1
   onDetachedFromHand:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: 556e697479456e67696e652e4576656e74732e556e6974794576656e742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+    m_CallsDirty: 1
+  attachmentFlags: 12
+  <rigidBody>k__BackingField: {fileID: 0}
+  bird: {fileID: 0}
   caught: 0
 --- !u!23 &1239446831
 MeshRenderer:
@@ -1523,6 +1537,11 @@ Transform:
 --- !u!135 &1755109574 stripped
 SphereCollider:
   m_PrefabParentObject: {fileID: 135000013715008844, guid: 3e91682b9cf7d2343ad152574d425cf8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1930312735}
+--- !u!1 &1810325118 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013797157526, guid: 3e91682b9cf7d2343ad152574d425cf8,
     type: 2}
   m_PrefabInternal: {fileID: 1930312735}
 --- !u!1001 &1930312735
